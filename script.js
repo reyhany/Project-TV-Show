@@ -33,9 +33,9 @@ window.onload = setup;
 function setup() {
   allEpisodes = getAllEpisodes();        // get data from episodes.js
   makePageForEpisodes(allEpisodes);         // Display all episodes initially
-   setupSearch();                         // Set up search functionality
+  setupSearch();                         // Set up search functionality
   setupSelect();                             // Set up select dropdown 
-   
+  updateCounter(allEpisodes.length, allEpisodes.length);     // Initialize counter
 
 }
 
@@ -44,9 +44,11 @@ function makePageForEpisodes(episodeList) {
   const rootElem = document.getElementById("root");
 
 // Clear only episode container, keep attribution if exists
+//Remove old container
   const existingContainer = document.querySelector(".episodes-container");
   if (existingContainer) existingContainer.remove();
   
+  //create new container
   // Create a container for all episodes
   const episodesContainer = document.createElement("div");
   episodesContainer.className = "episodes-container";
@@ -91,6 +93,7 @@ function makePageForEpisodes(episodeList) {
     'Data originally from <a href="https://www.tvmaze.com/" target="_blank">TVMaze.com</a>';
   rootElem.appendChild(attribution);
 }
+ updateCounter(episodeList.length, allEpisodes.length);
 }
 // 4️⃣ Search setup
 function setupSearch() {
@@ -147,3 +150,9 @@ function setupSelect() {
       makePageForEpisodes([selectedEpisode]);
     }
   });
+
+// 6️⃣ Counter updater ("Displaying X/Y episodes")
+function updateCounter(current, total) {
+  const label = document.getElementById("episodeCounter");
+  label.textContent = `Displaying ${current}/${total} episodes`;
+}

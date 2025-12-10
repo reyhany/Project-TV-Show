@@ -102,7 +102,7 @@ body {
   border-bottom: 2px solid #ddd;
   z-index: 9999;
 }
-/* =========   SEARCH INPUT    ===========*/
+/* =========   SEARCH(BOX) INPUT    ===========*/
 #searchInput {
   max-width: 300px;
   flex: 1;
