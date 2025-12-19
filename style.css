@@ -1,4 +1,3 @@
-
 /* ==== RESET ==== */
 * {
   margin: 0;
@@ -18,9 +17,62 @@ body {
 /* ==== ROOT CONTAINER ==== */
 #root {
   color: black;
-  padding-top: 100px;    /*placeholder for search bar*/
+  padding-top: 80px; /* Adjusted padding for top bar */
   max-width: 1200px;
   width: 100%;
+}
+
+/* ==== TOP BAR ==== */
+.top-bar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background: white;
+  padding: 15px 20px;
+  display: flex;
+  gap: 15px;
+  align-items: center;
+  border-bottom: 2px solid #ddd;
+  z-index: 9999;
+}
+
+/* ==== EPISODE SELECT DROPDOWN ==== */
+#episodeSelect {
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+  min-width: 250px;
+}
+
+#episodeSelect:focus {
+  outline: none;
+  border-color: #0077ff;
+}
+
+/* ==== SEARCH INPUT ==== */
+#searchInput {
+  flex: 1;
+  max-width: 300px;
+  padding: 10px;
+  font-size: 16px;
+  border-radius: 8px;
+  border: 2px solid #ccc;
+}
+
+#searchInput:focus {
+  outline: none;
+  border-color: #0077ff;
+}
+
+/* ==== EPISODE COUNTER ==== */
+#episodeCounter {
+  margin-left: unset;
+  font-size: 16px;
+  font-weight: 500;
+  color: #333;
+  white-space: nowrap;
 }
 
 /* ==== EPISODES GRID ==== */
@@ -73,46 +125,31 @@ body {
 }
 
 /* ==== ATTRIBUTION ==== */
-#root > p {
+#attribution {
   text-align: center;
   margin-top: 40px;
   font-size: 14px;
-  color: #a6cac6;
+  color: #666;
 }
 
-#root > p a {
+#attribution a {
   color: #0077cc;
   text-decoration: none;
 }
 
-#root > p a:hover {
+#attribution a:hover {
   text-decoration: underline;
 }
 
-.top-bar {
-  position: fixed; 
-  top: 0;
-  left: 0;
-  width: 100%;
-  background: white;
-  padding: 15px;
-  display: flex;
-  gap: 20px;
-  align-items: center;
-  border-bottom: 2px solid #ddd;
-  z-index: 9999;
-}
-/* =========   SEARCH(BOX) INPUT    ===========*/
-#searchInput {
-  max-width: 300px;
-  flex: 1;
-  padding: 12px;
-  font-size: 16px;
-  border-radius: 8px;
-  border: 2px solid #ccc;
+/* ==== MESSAGE STYLES ==== */
+.loading-message,
+.error-message {
+  text-align: center;
+  padding: 40px;
+  font-size: 18px;
+  color: #666;
 }
 
-#searchInput:focus {
-  outline: none;
-  border-color: #0077ff;
+.error-message {
+  color: #d32f2f;
 }

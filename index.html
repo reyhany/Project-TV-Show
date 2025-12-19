@@ -9,20 +9,26 @@
   </head>
 
   <body>
-    
     <div class="top-bar">
+      <!-- Episode dropdown goes first (left) -->
+      <select id="episodeSelect"></select>
+
+      <!-- Search bar goes next -->
       <input id="searchInput" type="text" placeholder="Search episodes..." />
-      <p id="count"></p>
-      <button id="countReset" title="Restore automatic updates" style="display:none">Reset</button>
-      <span id="episodeCounter"></span>            
+
+      <!-- Episode counter goes last -->
+      <div id="episodeCounter"></div>
+
+      <button
+        id="countReset"
+        title="Restore automatic updates"
+        style="display: none"
+      >
+        Reset
+      </button>
     </div>
 
-  
-
     <div id="root"></div>
-    
-    <!-- Loads a provided function called getAllEpisodes() which returns all episodes -->
-    <script src="episodes.js"></script>
 
     <!-- Loads YOUR javascript code -->
     <script src="script.js"></script>
